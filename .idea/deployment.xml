@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="shkim@106.254.216.142:2031">
+    <serverData>
+      <paths name="shkim@106.254.216.142:2031">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/mnt/ssm/AdelaiDet" local="$PROJECT_DIR$/AdelaiDetㅁ" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="shkim@121.66.114.3:2031">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/mnt/ssm/AdelaiDet" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
