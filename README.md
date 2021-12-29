@@ -15,7 +15,7 @@ For more details, please refer to our paper: [Weighted Mask R-CNN](https://www.h
 
 # Training & Inference
 
-Weighted Mask R-CNN is explained with reference to [torchvision tutorial](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html).
+Weighted Mask R-CNN is explained with reference to [TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html).
 
 
 
