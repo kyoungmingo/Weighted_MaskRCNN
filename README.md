@@ -11,6 +11,14 @@ Visualization results of real data(Microcystis):
 
 <img width="675" alt="스크린샷 2021-12-29 오후 3 39 07" src="https://user-images.githubusercontent.com/35245580/147634342-af289caa-041f-464b-9e32-dc628dac218d.png">
 
+For more details, please refer to our paper: [Weighted Mask R-CNN](https://www.hindawi.com/journals/js/2021/8872947/). 
+
+# Training & Inference
+
+Weighted Mask R-CNN is explained with reference to [torchvision tutorial](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html).
+
+
+
 
 
 
