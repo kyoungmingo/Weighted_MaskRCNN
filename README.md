@@ -4,6 +4,7 @@ By SungMin Suh, Yongeun Park, KyoungMin Ko, SeongMin Yang, Jaehyeong Ahn, Jae-Ki
 
 This repository contains a Pytorch implementation of Weighted Mask R-CNN with applications to simulated data and real data(e.g., Microcystis, one of the most common algae genera and cell membrane images)
 
+<img width="682" alt="스크린샷 2021-12-29 오후 3 24 20" src="https://user-images.githubusercontent.com/35245580/147633418-6bb18aed-c525-4012-aed2-83e533251bcd.png">
 
 
 
