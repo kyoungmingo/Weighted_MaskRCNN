@@ -13,10 +13,21 @@ Visualization results of real data(Microcystis):
 
 For more details, please refer to our paper: [Weighted Mask R-CNN](https://www.hindawi.com/journals/js/2021/8872947/). 
 
-# Training & Inference
+# How to Run
 
 Weighted Mask R-CNN is explained with reference to [TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html).
 
+## Setting
+
+1. To use torchvision tutorial for Mask R-CNN, copy everything under references/detection to your folder and use them here.
+2. To use Weighted Mask R-CNN, modify roi_heads.py under your environment's torchvision to vision/torchvision/models/detection/roi_heads.py.
+3. All data sets are available at the author’s website (http://www.hifiai.pe.kr).
+
+## Training
+
+The easiest way is to open the colab notebook.
+
+## Inference
 
 
 
