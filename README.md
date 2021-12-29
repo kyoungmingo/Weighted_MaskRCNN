@@ -1,15 +1,15 @@
-# Weighted Mask R-CNN for Improving Adjacent Boundary Segmentation
 ------------
+# Weighted Mask R-CNN for Improving Adjacent Boundary Segmentation
+
 By SungMin Suh, Yongeun Park, KyoungMin Ko, SeongMin Yang, Jaehyeong Ahn, Jae-Ki Shin and SungHwan Kim
 
-This repository contains a Pytorch implementation of Weighted Mask R-CNN with applications to simulated data and real data(e.g., Microcystis, one of the most common algae genera and cell membrane images)
+This repository contains a Pytorch implementation of Weighted Mask R-CNN with applications to simulated data and real data(e.g., Microcystis, one of the most common algae genera and cell membrane images). The architecture of the proposed model of our Weighted Mask R-CNN can be found below:
 
 <img width="682" alt="스크린샷 2021-12-29 오후 3 24 20" src="https://user-images.githubusercontent.com/35245580/147633418-6bb18aed-c525-4012-aed2-83e533251bcd.png">
 
+Visualization results of real data(Microcystis):
 
-
-
-
+<img width="675" alt="스크린샷 2021-12-29 오후 3 39 07" src="https://user-images.githubusercontent.com/35245580/147634342-af289caa-041f-464b-9e32-dc628dac218d.png">
 
 
 
