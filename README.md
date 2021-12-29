@@ -21,6 +21,9 @@ Weighted Mask R-CNN is explained with reference to [TORCHVISION OBJECT DETECTION
 
 1. To use torchvision tutorial for Mask R-CNN, copy everything under references/detection to your folder and use them here.
 2. To use Weighted Mask R-CNN, modify roi_heads.py under your environment's torchvision to vision/torchvision/models/detection/roi_heads.py.
+=>torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2
+=>If it is different from our version, copy and paste definitions "getweightmap" & "my_weightmap" on your roi_heads.py.
+=>Modify the definition "maskrcnn_loss" the same as our "maskrcnn_loss".
 3. All data sets are available at the author’s website (http://www.hifiai.pe.kr).
 
 ## Training
