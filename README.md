@@ -37,17 +37,18 @@ The easiest way is to open the notebook(main.ipynb).
 
 + This weight induces strong separation across samples as boundaries get closer.
 
-Getting weight map
+### Getting weight map
 
-  def getweightmap(mask):
-    mask = mask.cpu()
-    w_c = np.empty(mask.shape)
-    frac0 = torch.mean((mask == 0).float())  # background
-    frac1 = torch.mean((mask == 1).float())  # instance
-    # Calculate weight map
-    w_c[mask == 0] = 0.5 / (frac0)
-    w_c[mask == 1] = 0.5 / (frac1)
-    return w_c
+'''
+def getweightmap(mask):
+  mask = mask.cpu()
+  w_c = np.empty(mask.shape)
+  frac0 = torch.mean((mask == 0).float())  # background
+  frac1 = torch.mean((mask == 1).float())  # instance
+  # Calculate weight map
+  w_c[mask == 0] = 0.5 / (frac0)
+  w_c[mask == 1] = 0.5 / (frac1)
+  return w_c
 
 
 def weightmap(masks, w0=10, sigma=500):
@@ -72,9 +73,7 @@ def weightmap(masks, w0=10, sigma=500):
         weight = (masks * (torch.from_numpy(w_n)).cuda())
         weight_f.append(weight)
     return weight_f
-
-+ get a weight map whose weights increase as the objects get closer.
-
+'''
 
 
 
