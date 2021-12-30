@@ -1,4 +1,3 @@
-------------
 # Weighted Mask R-CNN for Improving Adjacent Boundary Segmentation
 
 By SungMin Suh, Yongeun Park, KyoungMin Ko, SeongMin Yang, Jaehyeong Ahn, Jae-Ki Shin and SungHwan Kim
@@ -75,6 +74,7 @@ def weightmap(masks, w0=10, sigma=500):
     return weight_f
 ```
 
+------------
 
 
 
