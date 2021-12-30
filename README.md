@@ -32,10 +32,48 @@ The easiest way is to open the notebook(main.ipynb).
 
 ## Weight Map
 
-### Original Image
 ![스크린샷 2021-12-30 오후 3 39 04](https://user-images.githubusercontent.com/35245580/147727847-a395205d-c500-4b3e-be11-cfb4c3541792.png)
 ![스크린샷 2021-12-30 오후 3 39 24](https://user-images.githubusercontent.com/35245580/147727930-3b7e8402-530f-456b-8602-054c7322a630.png)
 
++ This weight induces strong separation across samples as boundaries get closer.
+
+Getting weight map
+
+  def getweightmap(mask):
+    mask = mask.cpu()
+    w_c = np.empty(mask.shape)
+    frac0 = torch.mean((mask == 0).float())  # background
+    frac1 = torch.mean((mask == 1).float())  # instance
+    # Calculate weight map
+    w_c[mask == 0] = 0.5 / (frac0)
+    w_c[mask == 1] = 0.5 / (frac1)
+    return w_c
+
+
+def weightmap(masks, w0=10, sigma=500):
+    weight_f = []
+    for i in np.arange(len(masks)):
+        masks = masks[i]
+        merged_mask = torch.sum(masks, dim=0)
+        weight = np.zeros(merged_mask.shape)
+        # calculate weight for important pixels
+        distances = np.array([ndimage.distance_transform_edt(m == 0) for m in masks.cpu()])
+        shortest_dist = np.sort(distances, axis=0)
+        # distance to the border of the nearest cell
+        d1 = shortest_dist[0]
+        # distance to the border of the second nearest cell
+        d2 = shortest_dist[1] if len(shortest_dist) > 1 else np.zeros(d1.shape)
+        w_b = np.exp(-((d1 + d2) ** 2 / (2 * (sigma ** 2))))
+        w_c = getweightmap(merged_mask)
+        w = w_c + (w0 * w_b)
+        w_n = (w - np.min(w)) / (np.max(w) - np.min(w))
+        # sig (0.1,0.5,1.0) hyper parameter for weight
+        w_n = 1 + w_n * 0.1
+        weight = (masks * (torch.from_numpy(w_n)).cuda())
+        weight_f.append(weight)
+    return weight_f
+
++ get a weight map whose weights increase as the objects get closer.
 
 
 
