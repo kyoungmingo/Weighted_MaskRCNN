@@ -28,7 +28,7 @@ Weighted Mask R-CNN is explained with reference to [TORCHVISION OBJECT DETECTION
 
 ## Training & Inference
 
-The easiest way is to open the notebook(main.ipynb).
+The easiest way is to open the notebook(sample_tutorial.ipynb).
 
 ## Weight Map
 
