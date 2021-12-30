@@ -39,7 +39,7 @@ The easiest way is to open the notebook(main.ipynb).
 
 ### Getting weight map
 
-₩₩₩
+```
 def getweightmap(mask):
   mask = mask.cpu()
   w_c = np.empty(mask.shape)
@@ -73,7 +73,7 @@ def weightmap(masks, w0=10, sigma=500):
         weight = (masks * (torch.from_numpy(w_n)).cuda())
         weight_f.append(weight)
     return weight_f
-₩₩₩
+```
 
 
 
