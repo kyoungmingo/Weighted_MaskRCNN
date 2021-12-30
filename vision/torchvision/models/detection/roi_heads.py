@@ -17,20 +17,17 @@ from scipy import ndimage
 
 
 def getweightmap(mask):
-    #     assert mask.size > 0
     mask = mask.cpu()
     w_c = np.empty(mask.shape)
     frac0 = torch.mean((mask == 0).float())  # background
     frac1 = torch.mean((mask == 1).float())  # instance
-    #     assert frac0 > 0
-    #     assert frac1 > 0
     # Calculate weight map
     w_c[mask == 0] = 0.5 / (frac0)
     w_c[mask == 1] = 0.5 / (frac1)
     return w_c
 
 
-def getunetweightmap(masks, w0=10, sigma=500):
+def weightmap(masks, w0=10, sigma=500):
     weight_f = []
     for i in np.arange(len(masks)):
         masks = masks[i]
@@ -50,12 +47,6 @@ def getunetweightmap(masks, w0=10, sigma=500):
         # sig (0.1,0.5,1.0) hyper parameter for weight
         w_n = 1 + w_n * 0.1
         weight = (masks * (torch.from_numpy(w_n)).cuda())
-        #        weight = weight.cuda()
-        #         weight = w
-        #         weight2=weight.unsqueeze(0)
-        #         weight3=torch.cat((weight2,weight2),dim=0)
-        #         weight4=torch.cat((weight3,weight2),dim=0)
-        #         weight5=torch.cat((weight4,weight2),dim=0)
         weight_f.append(weight)
 
     return weight_f
@@ -185,7 +176,7 @@ def project_masks_on_boxes(gt_masks, boxes, matched_idxs, M):
 
 #Weighted Mask RCNN
 def maskrcnn_loss(mask_logits, proposals, gt_masks, gt_labels, mask_matched_idxs):
-    W_masks = getunetweightmap(gt_masks, w0=10, sigma=300)
+    W_masks = weightmap(gt_masks, w0=10, sigma=300)
 
     discretization_size = mask_logits.shape[-1]
     labels = [l[idxs] for l, idxs in zip(gt_labels, mask_matched_idxs)]
