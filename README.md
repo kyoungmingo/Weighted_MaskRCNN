@@ -33,8 +33,9 @@ The easiest way is to open the notebook(main.ipynb).
 ## Weight Map
 
 ### Original Image
-------
 ![스크린샷 2021-12-30 오후 3 39 04](https://user-images.githubusercontent.com/35245580/147727847-a395205d-c500-4b3e-be11-cfb4c3541792.png)
+![스크린샷 2021-12-30 오후 3 39 24](https://user-images.githubusercontent.com/35245580/147727930-3b7e8402-530f-456b-8602-054c7322a630.png)
+
 
 
 
