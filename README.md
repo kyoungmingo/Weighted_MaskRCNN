@@ -26,11 +26,15 @@ Weighted Mask R-CNN is explained with reference to [TORCHVISION OBJECT DETECTION
 + Modify the definition "maskrcnn_loss" the same as our "maskrcnn_loss".
 3. All data sets are available at the author’s website (http://www.hifiai.pe.kr).
 
-## Training
+## Training & Inference
 
-The easiest way is to open the colab notebook.
+The easiest way is to open the notebook(main.ipynb).
 
-## Inference
+## Weight Map
+
+### Original Image
+------
+![스크린샷 2021-12-30 오후 3 39 04](https://user-images.githubusercontent.com/35245580/147727847-a395205d-c500-4b3e-be11-cfb4c3541792.png)
 
 
 
