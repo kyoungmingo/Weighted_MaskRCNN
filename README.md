@@ -78,7 +78,7 @@ def weightmap(masks, w0=10, sigma=500):
 
 
 
-# Weighted_MaskRCNN
+<!-- # Weighted_MaskRCNN
 
 #training
 Weighted_maskrcnn.py는 color map label을 통해서 training이 가능하다.
@@ -101,4 +101,4 @@ Weighted_maskrcnn.py는 color map label을 통해서 training이 가능하다.
 measure 측정은 map, miou, 논문에 나온 instance간의 거리를 prediction과 gt의 차이를 통해 제시한 measure 총 3가지를 비교하였다.
 
 >Weighted_maskrcnn.py의 evaluate을 통해 measure 측정이 가능하다.
->AdelaiDet/MEInst_performance.py 를 통해 distance에 따른 measure 측정을 위한 작업이 진행가능하다.
+>AdelaiDet/MEInst_performance.py 를 통해 distance에 따른 measure 측정을 위한 작업이 진행가능하다. -->
